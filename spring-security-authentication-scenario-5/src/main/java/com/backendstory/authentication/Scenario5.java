@@ -1,5 +1,6 @@
 package com.backendstory.authentication;
 
+import com.backendstory.authentication.jwt.JwtHelper;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +47,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+//OAuth comes from Open Authorization(Not Authentication)
 @SpringBootApplication
 public class Scenario5 {
 
@@ -63,7 +65,7 @@ public class Scenario5 {
 @RestController
 class BasicController {
     @Autowired
-    private JwtUtil jwtUtil;
+    private JwtHelper jwtUtil;
 
     // injecting authentication manager
     @Autowired
@@ -154,7 +156,7 @@ class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 class JwtTokenFilter extends OncePerRequestFilter {
     // Simple JWT implementation
     @Autowired
-    private JwtUtil jwtUtil;
+    private JwtHelper jwtUtil;
 
     // Spring Security will call this method during filter chain execution
     @Override

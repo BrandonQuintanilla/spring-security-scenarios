@@ -31,7 +31,11 @@
             <version>1.18.22</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
+        <!--This three dependencies are provided by :
+        https://github.com/jwtk/jjwt -->
+        <!--Here we have some other JWT implementations:
+         https://jwt.io/libraries?language=Java-->
+<!--        <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-api</artifactId>
             <version>0.11.2</version>
@@ -47,6 +51,12 @@
             <artifactId>jjwt-jackson</artifactId>
             <version>0.11.2</version>
             <scope>runtime</scope>
+        </dependency>-->
+
+        <dependency>
+            <groupId>com.auth0</groupId>
+            <artifactId>java-jwt</artifactId>
+            <version>3.19.1</version>
         </dependency>
     </dependencies>
 </project>
